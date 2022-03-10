@@ -1,15 +1,15 @@
-import { useEffect, useRef } from "react";
-import styled from "styled-components";
+import { useEffect, useRef } from 'react';
+import styled from 'styled-components';
 
 export default function Preloader() {
-  const preloaderRef = (useRef < HTMLDivElement) | (null > null);
+  const preloaderRef = useRef(null);
 
   function rocketFly() {
     let counter = 20;
     let i = 0;
 
     while (i < counter) {
-      let stars = document.createElement("i");
+      let stars = document.createElement('i');
       let positionX = Math.floor(Math.random() * window.innerWidth);
 
       let duration = Math.random() * 2;
@@ -28,7 +28,7 @@ export default function Preloader() {
 
   function preLoader() {
     setTimeout(() => {
-      preloaderRef.current?.classList.add("hide");
+      preloaderRef.current?.classList.add('hide');
     }, 2000);
   }
 
@@ -40,7 +40,7 @@ export default function Preloader() {
   return (
     <PreloaderContainer ref={preloaderRef}>
       <RocketWrapper>
-        <img src="/img/rocket.svg" alt="rocket" />
+        <img src='/rocket.svg' alt='rocket' />
       </RocketWrapper>
     </PreloaderContainer>
   );
@@ -88,7 +88,7 @@ const RocketWrapper = styled.div`
 
   &:before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     height: 200px;
     width: 30px;
